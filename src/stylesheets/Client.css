@@ -1,0 +1,19 @@
+div.client-list-item {
+  width: 50%;
+  margin-bottom: 1em;
+  box-shadow: -4px 7px 7px #423a3a;
+  background-color: rgb(245, 245, 245);
+  transition: all 0.1s ease-out;
+}
+
+div.client-list-item:hover {
+  transform: scale(1.1);
+}
+
+p.client-name {
+  margin-left: 2em;
+  color: rgb(0, 59, 73);
+  font-size: 1.4em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}

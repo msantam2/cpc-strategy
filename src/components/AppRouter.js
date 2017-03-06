@@ -1,6 +1,6 @@
-import React from 'react'; 
-import { Router, hashHistory, Route } from 'react-router'; 
-import App from './App'; 
+import React from "react"; 
+import { Router, hashHistory, Route } from "react-router"; 
+import App from "./App"; 
 
 const AppRouter = () => (
   <Router history={hashHistory}>

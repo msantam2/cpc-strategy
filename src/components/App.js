@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import ClientList from './ClientList'; 
+import React, { Component } from "react";
+import ClientList from "./ClientList"; 
+import "../stylesheets/App.css"; 
   
 class App extends Component {
   constructor() {

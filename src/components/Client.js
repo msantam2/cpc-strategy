@@ -1,11 +1,12 @@
-import React, { Component } from 'react'; 
+import React, { Component } from "react"; 
+import "../stylesheets/Client.css"; 
 
 class Client extends Component {
   render() {
     return (
-      <li>
-        {this.props.client.client_name}
-      </li>
+      <div className="client-list-item">
+        <p className="client-name">{this.props.client.client_name}</p>
+      </div>
     ); 
   }
 }
