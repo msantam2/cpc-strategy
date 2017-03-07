@@ -1,11 +1,13 @@
 import React, { Component } from "react"; 
+import { hashHistory } from 'react-router';
 import { Icon } from "antd";
-import "../stylesheets/Client.css"; 
+import "../stylesheets/ClientListItem.css"; 
 
-class Client extends Component {
+class ClientListItem extends Component {
   constructor() {
     super();
     this.clientMetrics = this.clientMetrics.bind(this);
+    this.handleClick = this.handleClick.bind(this); 
   }
 
   clientMetrics() {
@@ -26,11 +28,16 @@ class Client extends Component {
     );
   }
 
+  handleClick() {
+    const { clientId, clientName } = this.props.client; 
+    hashHistory.push(`/clients/${clientId}/${clientName}`); 
+  }
+
   render() {
     const clientName = this.props.client.client_name; 
 
     return (
-      <li className="client-list-item">
+      <li className="client-list-item" onClick={this.handleClick}>
         <div className="client-list-item-content">
           <span className="client-name">{clientName}</span>
           {this.clientMetrics()}
@@ -41,4 +48,4 @@ class Client extends Component {
   }
 }
 
-export default Client;
+export default ClientListItem;

@@ -1,5 +1,5 @@
 import React from "react"; 
-import Client from "./Client"; 
+import ClientListItem from "./ClientListItem"; 
 import "../stylesheets/ClientList.css"; 
 
 const ClientList = ({ clients }) => {
@@ -13,12 +13,12 @@ const ClientList = ({ clients }) => {
 
   const renderClientList = () => {
     return sortByClientName().map(client => {
-      return <Client key={client.client_id} client={client} />; 
+      return <ClientListItem key={client.client_id} client={client} />; 
     }); 
   };
 
   return (
-    <ul className="client-list-container">
+    <ul className="client-list">
       {renderClientList()}
     </ul>
   );
