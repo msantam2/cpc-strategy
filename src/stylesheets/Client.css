@@ -1,19 +1,32 @@
-div.client-list-item {
+.client-list-item {
   width: 50%;
   margin-bottom: 1em;
-  box-shadow: -4px 7px 7px #423a3a;
+  box-shadow: -4px 7px 14px 4px rgb(90, 82, 82);
   background-color: rgb(245, 245, 245);
   transition: all 0.1s ease-out;
 }
 
-div.client-list-item:hover {
-  transform: scale(1.1);
-}
-
-p.client-name {
+.client-name {
   margin-left: 2em;
-  color: rgb(0, 59, 73);
   font-size: 1.4em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+
+.client-metrics {
+  display: none;
+}
+
+.client-list-item:hover .client-metrics {
+  display: unset; 
+}
+
+.client-list-item:hover {
+  transform: scale(1.1);
+  border-top: 5px solid rgb(0, 59, 73);
+  background: rgb(81, 173, 184);
+}
+
+.client-list-item:hover p {
+  color: white; 
 }

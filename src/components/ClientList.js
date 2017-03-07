@@ -18,9 +18,9 @@ const ClientList = ({ clients }) => {
   };
 
   return (
-    <div className="client-list-container">
+    <ul className="client-list-container">
       {renderClientList()}
-    </div>
+    </ul>
   );
 }; 
 
