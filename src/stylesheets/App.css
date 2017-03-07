@@ -1,10 +1,5 @@
 @import url("./Normalize.css"); 
-
-html {
-  font-family: 'Source Sans Pro', sans-serif;
-  color: rgb(0, 59, 73);
-  box-sizing: border-box;
-}
+@import "~antd/dist/antd.css";
 
 body {
   background-image: linear-gradient(55deg, rgb(0, 59, 73) 40%, rgb(25, 195, 212) 0%);

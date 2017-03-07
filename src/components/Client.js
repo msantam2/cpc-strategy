@@ -1,4 +1,5 @@
 import React, { Component } from "react"; 
+import { Icon } from "antd";
 import "../stylesheets/Client.css"; 
 
 class Client extends Component {
@@ -19,9 +20,9 @@ class Client extends Component {
     }
 
     return (
-      <p className="client-metrics">
+      <span className="client-metrics">
         {productCount} products over {keywordCount} keywords with {rankCount} rank data points
-      </p>
+      </span>
     );
   }
 
@@ -30,8 +31,11 @@ class Client extends Component {
 
     return (
       <li className="client-list-item">
-        <p className="client-name">{clientName}</p>
-        {this.clientMetrics()}
+        <div className="client-list-item-content">
+          <span className="client-name">{clientName}</span>
+          {this.clientMetrics()}
+          <Icon type="arrow-right" />          
+        </div>  
       </li>
     ); 
   }
