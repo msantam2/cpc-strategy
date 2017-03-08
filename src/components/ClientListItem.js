@@ -7,7 +7,7 @@ class ClientListItem extends Component {
   constructor() {
     super();
     this.clientMetrics = this.clientMetrics.bind(this);
-    this.handleClick = this.handleClick.bind(this); 
+    this.routeToClientPage = this.routeToClientPage.bind(this);
   }
 
   clientMetrics() {
@@ -28,16 +28,22 @@ class ClientListItem extends Component {
     );
   }
 
-  handleClick() {
-    const { clientId, clientName } = this.props.client; 
-    hashHistory.push(`/clients/${clientId}/${clientName}`); 
+  routeToClientPage() {
+    const { client } = this.props; 
+    const clientId = client.client_id; 
+    const clientName = client.client_name; 
+
+    hashHistory.push({
+      pathname: `/clients/${clientId}/${clientName}`,
+      state: { client }
+    });
   }
 
   render() {
     const clientName = this.props.client.client_name; 
 
     return (
-      <li className="client-list-item" onClick={this.handleClick}>
+      <li className="client-list-item" onClick={this.routeToClientPage}>
         <div className="client-list-item-content">
           <span className="client-name">{clientName}</span>
           {this.clientMetrics()}
