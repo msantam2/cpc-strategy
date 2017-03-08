@@ -11,9 +11,11 @@ class App extends Component {
   componentDidMount() {
     fetch("http://frontendtest.cpcstrategy.com/").then(res => {
       res.json().then(data => {
-        this.setState({ clients: data }); 
-      }); 
-    }); 
+        console.log(data);
+        console.log(Array.isArray(data));
+        this.setState({ clients: data });
+      });
+    });
   }
 
   render() {
