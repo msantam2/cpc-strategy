@@ -1,5 +1,6 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
 import { hashHistory } from 'react-router'; 
+import { connect } from 'react-redux';  
 
 class ClientPage extends Component {
   constructor(props) {
@@ -11,11 +12,15 @@ class ClientPage extends Component {
     hashHistory.replace("/"); 
   }  
 
-  render() {
+  render() { 
     return (
       <button onClick={this.goBack}>Go Back</button>
     ); 
   }
 }
 
-export default ClientPage; 
+const mapStateToProps = (state, ownProps) => ({
+  client: state.clients[ownProps.params.clientId - 1]
+});
+
+export default connect(mapStateToProps)(ClientPage); 

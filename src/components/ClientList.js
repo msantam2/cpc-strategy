@@ -1,5 +1,6 @@
 import React, { Component } from "react"; 
-import { connect } from 'react-redux'; 
+import { connect } from 'react-redux';
+import _ from "lodash";  
 import ClientListItem from "./ClientListItem"; 
 import "../stylesheets/ClientList.css"; 
 
@@ -12,7 +13,8 @@ class ClientList extends Component {
   }
   
   sortByClientName() {
-    const { clients } = this.props; 
+    // deep dup clients before sort (clients = [{client1}, {client2}, etc.])
+    const clients = _.map(this.props.clients, _.clone);
     return clients.sort((a, b) => {
       let first = a.client_name.replace(/,| |-/g, "").toLowerCase();
       let second = b.client_name.replace(/,| |-/g, "").toLowerCase();
@@ -65,8 +67,8 @@ class ClientList extends Component {
   }
 } 
 
-const mapStateToProps = ({ clients }) => {
-  return { clients }; 
-}; 
+const mapStateToProps = ({ clients }) => (
+  { clients } 
+); 
 
 export default connect(mapStateToProps)(ClientList); 
