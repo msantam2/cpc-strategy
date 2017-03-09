@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import { hashHistory } from 'react-router'; 
-import { connect } from 'react-redux';  
+import React, { Component } from "react";
+import { hashHistory } from "react-router"; 
+import { connect } from "react-redux";  
+import TitleBar from "./TitleBar"; 
 
-class ClientPage extends Component {
+class ClientPage extends Component { // has this.props.client :) 
   constructor(props) {
     super(props); 
     this.goBack = this.goBack.bind(this);
@@ -13,8 +14,14 @@ class ClientPage extends Component {
   }  
 
   render() { 
+    const clientName = this.props.client.client_name; 
     return (
-      <button onClick={this.goBack}>Go Back</button>
+      <div>
+        <TitleBar backToText="Clients"
+          titleHeader={clientName}
+          backToURL="/" />
+          
+      </div>  
     ); 
   }
 }
