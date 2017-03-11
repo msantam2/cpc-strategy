@@ -3,8 +3,11 @@ import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from "redux"; 
 import { Provider } from "react-redux"; 
 import ReduxThunk from "redux-thunk"; 
+import injectTapEventPlugin from "react-tap-event-plugin"; // for material-ui
 import masterReducer from "./reducers"; 
 import AppRouter from "./components/AppRouter";
+
+injectTapEventPlugin(); 
 
 const store = createStore(
   masterReducer, 

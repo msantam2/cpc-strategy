@@ -7,7 +7,7 @@ const TitleBar = ({ backToText, titleHeader, backToURL }) => {
   const goBack = () => hashHistory.push(backToURL); 
   
   return (
-    <div>
+    <div className="title-bar">
       <Button className="back-to-btn" onClick={goBack}>
         <span className="back-to-btn-text">
           Back to {backToText}
