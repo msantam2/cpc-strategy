@@ -7,15 +7,20 @@ import {
   CardTitle,
   CardActions
 } from "material-ui/Card";
-import FlatButton from "material-ui/FlatButton"; 
+import RaisedButton from "material-ui/RaisedButton"; 
+import Dialog from "material-ui/Dialog"; 
 import "../stylesheets/ProductCard.css"; 
 
 class ProductCard extends Component {
   constructor(props) {
     super(props); 
+    this.state = { open: false };
+    
     this.getAvgRankPerKeyword = this.getAvgRankPerKeyword.bind(this);
     this.keywords = this.keywords.bind(this); 
     this.averagesSynopsis = this.averagesSynopsis.bind(this); 
+    this.handleOpen = this.handleOpen.bind(this);
+    this.handleClose = this.handleClose.bind(this);
     
     this.avgRankPerKeyword = this.getAvgRankPerKeyword(); 
   }
@@ -53,13 +58,25 @@ class ProductCard extends Component {
     return "Average Rankings: " + synopsis;
   }
 
+  handleOpen() {
+    this.setState({ open: true }); 
+  }
+
+  handleClose() {
+    this.setState({ open: false }); 
+  }
+
   render() {
     const { product } = this.props; 
     const productName = product.product_name; 
     const productId = product.product_id; 
     const productASIN = product.product_asin; 
     const keywords = this.keywords(); 
-    const averagesSynopsis = this.averagesSynopsis(); 
+    const averagesSynopsis = this.averagesSynopsis();
+    const modalAction = <RaisedButton
+      label="OK"
+      onTouchTap={this.handleClose}
+    />; 
     
     return (
       <MuiThemeProvider>
@@ -79,8 +96,20 @@ class ProductCard extends Component {
           </CardMedia>
 
           <CardActions>
-            <FlatButton label="Keyword Analytics" />
+            <RaisedButton
+              label="Keyword Analytics"
+              onTouchTap={this.handleOpen}
+            />
           </CardActions>
+
+          <Dialog 
+            open={this.state.open}
+            title={productName}
+            actions={modalAction}
+            onRequestClose={this.handleClose}
+          >
+            This is where the Chart component is going to go  
+          </Dialog>  
         </Card>
       </MuiThemeProvider>
     ); 
