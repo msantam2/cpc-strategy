@@ -9,7 +9,7 @@ import {
 } from "material-ui/Card";
 import RaisedButton from "material-ui/RaisedButton"; 
 import Dialog from "material-ui/Dialog"; 
-import Charts from "./Charts"; 
+import Chart from "./Chart"; 
 import "../stylesheets/ProductCard.css"; 
 
 class ProductCard extends Component {
@@ -110,7 +110,8 @@ class ProductCard extends Component {
             actions={modalAction}
             onRequestClose={this.handleClose}
           >
-            <Charts keywords={keywords} />   
+            <h5 className="chart-title">Rankings Over Time</h5>
+            <Chart keywords={keywords} />   
           </Dialog>  
         </Card>
       </MuiThemeProvider>
