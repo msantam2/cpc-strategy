@@ -5,7 +5,10 @@ import "../../stylesheets/App.css";
   
 class App extends Component {
   componentDidMount() {
-    this.props.fetchClients("http://frontendtest.cpcstrategy.com/"); 
+    this.props.fetchClients(
+      "https://github.com/msantam2/data/blob/master/data.json",
+      {'mode': 'no-cors'}
+    ); 
   }
 
   render() {
