@@ -104,7 +104,7 @@ class ProductCard extends Component {
             />
           </CardActions>
 
-          <Dialog 
+          <Dialog   
             open={this.state.open}
             title={productName}
             actions={modalAction}
