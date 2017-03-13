@@ -93,13 +93,13 @@ class ProductCard extends Component {
               title={keywordNames}
               subtitle={averagesSynopsis}
             />}
-          >
+          >  
             <img src={product.product_image_url} />
           </CardMedia>
 
           <CardActions>
             <RaisedButton
-              label="Keyword Analytics"
+              label="Ranking Analytics"
               onTouchTap={this.handleOpen}
             />
           </CardActions>
@@ -110,8 +110,10 @@ class ProductCard extends Component {
             actions={modalAction}
             onRequestClose={this.handleClose}
           >
-            <h5 className="chart-title">Rankings Over Time</h5>
-            <Chart keywords={keywords} />   
+            <Chart keywords={keywords} />
+            <br></br>
+            <p className="trendline-explanation">If your trendline is decreasing (slope is negative), great! Your overall rankings for this product are heading towards #1.<br></br>
+            If your trendline is increasing (slope is positive) you may be moving away from #1. We can promise that our team will work with you to improve your rankings and, thus, the visibility of your product!</p>
           </Dialog>  
         </Card>
       </MuiThemeProvider>

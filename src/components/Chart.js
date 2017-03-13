@@ -1,39 +1,31 @@
 import React, { Component } from "react"; 
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend
-} from "recharts"; 
-import "../stylesheets/Chart.css"; 
+import * as RankingsParsing from "../utilities/RankingsParsing"; 
 
 class Chart extends Component {
+  componentDidMount() {
+    const { keywords } = this.props; 
+    const dataPoints = RankingsParsing.parse(keywords);
+    const rankingsArray = [[{ label: "Date", type: "date" }, "Ranking"]]
+      .concat(dataPoints);  
+    const data = window.google.visualization.arrayToDataTable(rankingsArray);
+
+    const options = {
+      title: "Rankings Over Time",
+      hAxis: { title: "Date" },
+      vAxis: { title: "Ranking" },
+      legend: "none",
+      trendlines: { 0: {} }
+    };
+
+    const chart = new window.google.visualization.ScatterChart(
+      document.getElementById("chart-div")
+    );
+    chart.draw(data, options);
+  }
+
   render() {
-    const data = this.props.keywords; // [{kw1}, {kw2}, etc.]
     return (
-      <div className="line-chart-wrapper">
-        <LineChart
-          data={data}  
-          width={600}
-          height={300}
-          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-        >
-          <XAxis dataKey="keyword_id" />
-          <YAxis yAxisId="left" orientation="left" stroke="#19c3d4" />
-          <YAxis yAxisId="right" orientation="right" stroke="#19c3d4" />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone"
-            yAxisId="left"
-            dataKey="keyword_id"
-            stroke="#19c3d4"
-          />
-        </LineChart>
-      </div>
+      <div id="chart-div"></div>
     ); 
   }
 }
