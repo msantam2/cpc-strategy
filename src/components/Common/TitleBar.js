@@ -1,7 +1,7 @@
 import React from "react";
 import { hashHistory } from "react-router"; 
 import { Button } from "antd"; 
-import "../stylesheets/TitleBar.css"; 
+import "../../stylesheets/TitleBar.css"; 
 
 const TitleBar = ({ backToText, titleHeader, backToURL }) => {
   const goBack = () => hashHistory.push(backToURL); 

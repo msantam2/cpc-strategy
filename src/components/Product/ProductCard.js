@@ -9,8 +9,8 @@ import {
 } from "material-ui/Card";
 import RaisedButton from "material-ui/RaisedButton"; 
 import Dialog from "material-ui/Dialog"; 
-import Chart from "./Chart"; 
-import "../stylesheets/ProductCard.css"; 
+import Chart from "./Chart";
+import "../../stylesheets/ProductCard.css"; 
 
 class ProductCard extends Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylesheets/NotFound.css"; 
+import "../../stylesheets/NotFound.css"; 
 
 const NotFound = () => (
   <div className="not-found">

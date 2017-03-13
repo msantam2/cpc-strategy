@@ -1,5 +1,5 @@
 import React, { Component } from "react"; 
-import * as RankingsParsing from "../utilities/RankingsParsing"; 
+import * as RankingsParsing from "../../utilities/RankingsParsing"; 
 
 class Chart extends Component {
   componentDidMount() {

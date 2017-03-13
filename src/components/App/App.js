@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux"; 
-import { fetchClients } from "../actions/ClientActions";
-import "../stylesheets/App.css"; 
+import { fetchClients } from "../../actions/ClientActions";
+import "../../stylesheets/App.css"; 
   
 class App extends Component {
   componentDidMount() {

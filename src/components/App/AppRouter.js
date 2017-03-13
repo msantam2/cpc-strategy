@@ -1,9 +1,9 @@
 import React from "react"; 
 import { Router, hashHistory, Route, IndexRoute } from "react-router"; 
 import App from "./App"; 
-import ClientList from "./ClientList"; 
-import ClientPage from "./ClientPage"; 
-import NotFound from "./NotFound"; 
+import ClientList from "../Client/ClientList"; 
+import ClientPage from "../Client/ClientPage"; 
+import NotFound from "../Common/NotFound"; 
 
 const AppRouter = () => (
   <Router history={hashHistory}>

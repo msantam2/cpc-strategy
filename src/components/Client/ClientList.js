@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";  
 import ClientListItem from "./ClientListItem"; 
-import "../stylesheets/ClientList.css"; 
+import "../../stylesheets/ClientList.css"; 
 
 class ClientList extends Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";  
-import TitleBar from "./TitleBar"; 
-import ProductGrid from "./ProductGrid"; 
+import TitleBar from "../Common/TitleBar"; 
+import ProductGrid from "../Product/ProductGrid"; 
 
 const ClientPage = ({ client }) => {
   const clientName = client.client_name;

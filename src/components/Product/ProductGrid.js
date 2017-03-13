@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SearchInput, { createFilter } from "react-search-input"; 
 import ProductCard from "./ProductCard"; 
-import "../stylesheets/ProductGrid.css";
+import "../../stylesheets/ProductGrid.css";
 
 const KEYS_TO_FILTER = ["product_id", "product_name", "product_asin"]; 
 
