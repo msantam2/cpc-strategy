@@ -1,7 +1,6 @@
 # CPC-Strategy: SEO Analysis
 
-[Live Web App][cpcStrategy]
-[cpcStrategy]: https://msantam2.github.io/cpc-strategy/
+[Live Web App!](https://msantam2.github.io/cpc-strategy/)
 
 ## Technologies Used
 | UI | Global App State | Routing | Auxiliary |
