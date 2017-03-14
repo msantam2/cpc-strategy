@@ -23,3 +23,14 @@ Upon clicking "Ranking Analytics", the user is presented with a chart of the ran
 - Built the Trendline Chart component with the Google Charts API, called in ```componentDidMount``` of ```Chart.js```
 - Harnessed Webpack: create 1:1 relationship between component and its stylesheet, simply importing the stylesheet in the component to include it in the webpack bundle
 - Bootstrapped with create-react-app
+
+## Screenshots
+
+<img src="https://res.cloudinary.com/dc2o3efbz/image/upload/v1489523618/Screen_Shot_2017-03-14_at_1.29.41_PM_eb9g8r.png" width="800" height="450" 
+/>
+
+<img src="https://res.cloudinary.com/dc2o3efbz/image/upload/v1489523623/Screen_Shot_2017-03-14_at_1.30.07_PM_kkedwj.png" width="800" height="450" 
+/>
+
+<img src="https://res.cloudinary.com/dc2o3efbz/image/upload/v1489523626/Screen_Shot_2017-03-14_at_1.30.15_PM_sw3lwt.png" width="800" height="450" 
+/>
