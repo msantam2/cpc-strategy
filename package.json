@@ -31,5 +31,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://msantam2.github.io/cpc-strategy/"
+  "homepage": "https://msantam2.github.io/cpc-strategy/"
 }
